@@ -3,85 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cute Portfolio</title>
+  <title>Viviane Furtado - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="hero">
-  <h1>Hi, I’m Viviane Furtado ✨</h1>
-  <p>A beginner developer crafting cute & creative web experiences</p>
-  <div class="hero-buttons">
-    <a class="btn btn-primary">Get in Touch</a>
-    <a class="btn btn-secondary">View GitHub</a>
-  </div>
-  </section>
-
-  <section class="section about">
-    <h2>About Me <span class="emoji">🌟</span></h2>
-    <p class="card">
-      I’m a passionate beginner developer who loves creating beautiful and functional web applications.
-      My journey into coding started with a curiosity about how websites work, and now I’m hooked on bringing creative ideas to life through code.
-      I especially enjoy working on projects with cute, game-inspired designs that make people smile!
-    </p>
-  </section>
-
-  <section class="section skills">
-    <h2>Skills & Tools <span class="emoji">🎮</span></h2>
-    <div class="grid">
-      <div class="skill">✨ HTML & CSS</div>
-      <div class="skill">✨ JavaScript</div>
-      <div class="skill">✨ React</div>
-      <div class="skill">✨ TypeScript</div>
-      <div class="skill">✨ Git & GitHub</div>
-      <div class="skill">✨ Responsive Design</div>
+  <!-- Hero Section -->
+  <section id="welcome-section">
+    <div class="sparkle sparkle-left">🧡</div>
+    <div class="sparkle sparkle-right">✨</div>
+    <div class="code-symbol">&#60;/&#62;</div>
+    
+    <h1>Hi, I'm <span class="highlight">Viviane Furtado</span> ✨</h1>
+    <p class="subtitle">A beginner developer crafting cute & creative web experiences</p>
+    
+    <div class="button-group">
+      <a href="#contact" class="btn btn-purple">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 4h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="m2 5 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Get in Touch
+      </a>
+      <a href="https://github.com/yourusername" class="btn btn-white" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.137 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+        </svg>
+        View GitHub
+      </a>
     </div>
   </section>
 
-  <section class="section projects">
-    <h2>My Projects <span class="emoji">👋</span></h2>
-    <div class="grid">
-      <div class="project">
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me 🌟</h2>
+    <div class="content-box">
+      <p>I'm a passionate beginner developer who loves creating beautiful and functional web applications. My journey into coding started with a curiosity about how websites work, and now I'm hooked on bringing creative ideas to life through code. I especially enjoy working on projects with cute, game-inspired designs that make people smile!</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills & Tools 🎮</h2>
+    <div class="skills-grid">
+      <div class="skill-item">✨ HTML & CSS</div>
+      <div class="skill-item">✨ JavaScript</div>
+      <div class="skill-item">✨ React</div>
+      <div class="skill-item">✨ TypeScript</div>
+      <div class="skill-item">✨ Git & GitHub</div>
+      <div class="skill-item">✨ Responsive Design</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects 💫</h2>
+    <div class="projects-grid">
+      <div class="project-card">
         <h3>Weather App</h3>
         <p>A cute weather app with animated icons and smooth transitions</p>
         <div class="tags">
-          <span>React</span><span>API</span><span>CSS</span>
+          <span class="tag">React</span>
+          <span class="tag">API</span>
+          <span class="tag">CSS</span>
         </div>
-        <a href="#" class="btn small">View Project ↗</a>
+        <a href="#" class="project-link">
+          View Project 
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 3h7v7M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
       </div>
-      <div class="project">
+
+      <div class="project-card">
         <h3>Todo List</h3>
         <p>Colorful task manager with drag & drop functionality</p>
         <div class="tags">
-          <span>JavaScript</span><span>LocalStorage</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">LocalStorage</span>
         </div>
-        <a href="#" class="btn small">View Project ↗</a>
+        <a href="#" class="project-link">
+          View Project 
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 3h7v7M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
       </div>
-      <div class="project">
+
+      <div class="project-card">
         <h3>Portfolio Site</h3>
-        <p>This very portfolio you’re looking at right now!</p>
+        <p>This very portfolio you're looking at right now!</p>
         <div class="tags">
-          <span>React</span><span>Tailwind</span>
+          <span class="tag">React</span>
+          <span class="tag">Tailwind</span>
         </div>
-        <a href="#" class="btn small">View Project ↗</a>
+        <a href="#" class="project-link">
+          View Project 
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 3h7v7M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section contact" id="contact">
-    <h2>Let's Connect! <span class="emoji">💌</span></h2>
-    <p class="card">I’m always excited to collaborate on new projects or just chat about code and design!</p>
-    <div class="buttons">
-      <a href="#" class="btn primary">📧 Email Me</a>
-      <a href="#" class="btn neutral">GitHub</a>
-      <a href="#" class="btn neutral">LinkedIn</a>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Let's Connect! 💌</h2>
+    <div class="content-box">
+      <p>I'm always excited to collaborate on new projects or just chat about code and design!</p>
+      <div class="contact-buttons">
+        <a href="mailto:your.email@example.com" class="btn btn-purple">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 4h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="m2 5 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Email Me
+        </a>
+        <a href="https://github.com/yourusername" class="btn btn-white" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.137 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" fill="currentColor"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/yourusername" class="btn btn-white" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0H4a4 4 0 0 0-4 4v12a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zM6 15H3V7h3v8zM4.5 5.7A1.8 1.8 0 1 1 6.3 4a1.8 1.8 0 0 1-1.8 1.7zM17 15h-3v-4.3c0-1-.03-2.3-1.4-2.3s-1.6 1.1-1.6 2.2V15h-3V7h2.9v1.1h.04a3.2 3.2 0 0 1 2.87-1.6c3.06 0 3.63 2 3.63 4.7V15z" fill="currentColor"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    Made with 🧡 by Your Name
+  <!-- Footer -->
+  <footer>
+    <p>Made with 🧡 by Viviane Furtado</p>
   </footer>
 </body>
 </html>
-
-
