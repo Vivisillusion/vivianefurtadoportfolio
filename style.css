@@ -54,9 +54,50 @@ body {
 
 .button-group {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   margin-top: 1.5rem;
 }
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1.5rem;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button svg, 
+.button span.emoji {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.button.purple {
+  background-color: #d6c0f9;
+  color: #4d2d84;
+}
+
+.button.purple:hover {
+  background-color: #c2a9ef;
+}
+
+.button.white {
+  background-color: #ffffff;
+  color: #4d2d84;
+  border: 1px solid #ccc;
+}
+
+.button.white:hover {
+  background-color: #f0e9ff;
+}
+
 
 .button-group a {
   padding: 0.75rem 1.5rem;
@@ -263,3 +304,4 @@ footer {
     flex-direction: column;
   }
 }
+
