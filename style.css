@@ -1,0 +1,265 @@
+/* Fonts and Variables */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #fdf9f6;
+  --primary-color: #a58ce1;
+  --secondary-color: #5c4a72;
+  --accent-color: #ffd97b;
+  --light-purple: #f0eaff;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Header */
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+#welcome-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+#welcome-section h1 span {
+  color: var(--primary-color);
+}
+
+#welcome-section p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button-group a {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #9370db;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: #fff;
+}
+
+.btn-outline:hover {
+  background-color: var(--light-purple);
+}
+
+/* Sections */
+section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+/* About */
+.about-box {
+  background: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Skills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill {
+  background: #fff;
+  border: 2px solid #eee;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Projects */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-tile {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 280px;
+  text-align: left;
+}
+
+.project-tile h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.project-tile .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tag {
+  background-color: #e5f5f1;
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.project-tile a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  background-color: #fff8ec;
+  border: 1px solid #eee;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Contact */
+.contact-box {
+  background: #fff;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.contact-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+}
+
+.contact-links .email {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.contact-links .github,
+.contact-links .linkedin {
+  background-color: #fff8ec;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+  color: #888;
+}
+
+/* Sticky Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-color);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .projects-grid,
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #welcome-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
