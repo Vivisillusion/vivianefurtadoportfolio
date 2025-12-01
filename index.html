@@ -6,6 +6,34 @@
   <title>Viviane Furtado - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  /* VARIÁVEIS DE CORES - personalize pro seu site! */
+  :root {
+    /* TEMA CLARO (default) */
+    --bg-color: #f5f3f0;
+    --text-color: #2d2838;
+    --card-bg: #ffffff;
+  }
+
+  [data-theme="dark"] {
+    /* TEMA ESCURO - ajuste essas cores! */
+    --bg-color: #2a1b3d;
+    --text-color: #f5f3f0;
+    --card-bg: #3d2e52;
+  }
+
+  /* SEU CSS EXISTENTE - use as variáveis */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .card, .header, .container {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+  }
+</style>
 </head>
 <body>
   <!-- Hero Section -->
@@ -145,6 +173,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
