@@ -7,35 +7,126 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-  /* VARIÁVEIS DE CORES - personalize pro seu site! */
-  :root {
-    /* TEMA CLARO (default) */
-    --bg-color: #f5f3f0;
-    --text-color: #2d2838;
-    --card-bg: #ffffff;
-  }
+    /* VARIÁVEIS DE CORES */
+    :root {
+      /* TEMA CLARO (default) */
+      --bg-color: #f5f3f0;
+      --text-color: #2d2838;
+      --card-bg: #ffffff;
+      --purple: #b8a4d4;
+      --dark-purple: #3d2e52;
+    }
 
-  [data-theme="dark"] {
-    /* TEMA ESCURO - ajuste essas cores! */
-    --bg-color: #2a1b3d;
-    --text-color: #f5f3f0;
-    --card-bg: #3d2e52;
-  }
+    [data-theme="dark"] {
+      /* TEMA ESCURO */
+      --bg-color: #2a1b3d;
+      --text-color: #f5f3f0;
+      --card-bg: #3d2e52;
+      --purple: #b8a4d4;
+      --dark-purple: #e8dfff;
+    }
 
-  /* SEU CSS EXISTENTE - use as variáveis */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .card, .header, .container {
-    background-color: var(--card-bg);
-    transition: background-color 0.3s ease;
-  }
-</style>
+    /* CSS BASE COM VARIÁVEIS */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* ESTILOS DO TOGGLE */
+    .theme-toggle-wrapper {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--card-bg);
+      border-radius: 999px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--purple);
+      transition: .4s;
+      border-radius: 24px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: var(--dark-purple);
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(26px);
+    }
+
+    .toggle-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .theme-toggle:hover .toggle-icon {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
+  <!-- BOTÃO TOGGLE -->
+  <div class="theme-toggle-wrapper">
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <span class="toggle-icon">☀️</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="universal-theme-toggle">
+        <span class="toggle-slider"></span>
+      </label>
+      <span class="toggle-icon">🌙</span>
+    </button>
+  </div>
+
   <!-- Hero Section -->
   <section id="welcome-section">
     <div class="sparkle sparkle-left">🧡</div>
@@ -62,6 +153,7 @@
     </div>
   </section>
 
+  <!-- Resto do seu conteúdo... -->
   <!-- About Section -->
   <section id="about">
     <div class="floating-decoration" style="position: absolute; left: 5%; top: 10%; font-size: 1.5rem; opacity: 0.4; animation: float 4s ease-in-out infinite;">💜</div>
@@ -171,12 +263,31 @@
   <footer>
     <p>Made with 🧡 by Viviane Furtado</p>
   </footer>
+
+  <!-- JAVASCRIPT DO TOGGLE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('universal-theme-toggle');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const savedTheme = localStorage.getItem('universalTheme');
+      
+      // Set initial theme
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark.matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.checked = true;
+      }
+
+      // Toggle theme on change
+      toggle.addEventListener('change', function() {
+        if (this.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('universalTheme', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('universalTheme', 'light');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
